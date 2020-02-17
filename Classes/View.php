@@ -3,8 +3,9 @@
 namespace lib\View\Classes;
 
 use lib\Path\Classes\Path;
+use lib\View\Interfaces\ViewInterface;
 
-class View {
+class View implements ViewInterface {
 
     private $_view;
 
