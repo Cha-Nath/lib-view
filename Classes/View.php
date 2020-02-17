@@ -19,11 +19,11 @@ class View {
         require_once $to_load;
     }
 
-    public function render(string $view, array $parameters = []) : string {
+    public function render(array $parameters = []) : string {
 
         ob_start();
 
-        $this->load($view);
+        $this->load($this->_view);
 
         $html = ob_get_clean();
 

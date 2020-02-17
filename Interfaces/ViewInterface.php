@@ -13,11 +13,10 @@ interface ViewInterface {
 
     /**
      *
-     * @param string $view
      * @param array $parameters
      * @return string
      */
-    public function render(string $view, array $parameters = []) : string;
+    public function render(array $parameters = []) : string;
 
     /**
      *
