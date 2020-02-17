@@ -23,6 +23,9 @@ class View implements ViewInterface {
 
     public function render(array $parameters = []) : string {
 
+        $this->setParameters($parameters);
+        unset($parameters);
+        
         ob_start();
 
         $this->load($this->_view);
