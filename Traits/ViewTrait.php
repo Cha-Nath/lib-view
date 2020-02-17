@@ -19,7 +19,7 @@ trait ViewTrait {
 
     #region Setter
 
-    public function setParser(View $view) : self { $this->_view = $view; return $this; }
+    public function setView(View $view) : self { $this->_view = $view; return $this; }
     
     #endregion
 }
