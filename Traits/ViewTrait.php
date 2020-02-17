@@ -11,7 +11,7 @@ trait ViewTrait {
     #region Getter
 
     public function View(string $view) : View {
-        if(empty($this->_view)) $this->setParser(new View($view));
+        if(empty($this->_view)) $this->setView(new View($view));
         return $this->_view->setView($view);
     }
 
