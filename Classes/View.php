@@ -6,17 +6,29 @@ use lib\Path\Classes\Path;
 
 class View {
 
-    public function load(string $file) : void {
+    private $_view;
 
-        if(!file_exists($to_load = Path::i()->getPublic() . $file . '.php')) die($this->error('File "<em>' . $file . '</em>" doesn\'t exist.'));
+    public function __construct(string $view) {
+        $this->setView($view);
+    }
+
+    public function load(string $view) : void {
+
+        if(!file_exists($to_load = Path::i()->getPublic() . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
         
         require_once $to_load;
     }
 
-    public function error(string $message) : void {
+    public function render(string $view, array $parameters = []) : string {
 
-        if(!file_exists($to_load = Path::i()->getPublic() . 'admin-notice.php')) die('File "<em>admin-notice</em>" doesn\'t exist.');
+        ob_start();
 
-        require_once $to_load;
+        $this->load($view);
+
+        $html = ob_get_clean();
+
+        return $html;
     }
+
+    public function setView(string $view) : self { $this->_view = $view; return $this; }
 }

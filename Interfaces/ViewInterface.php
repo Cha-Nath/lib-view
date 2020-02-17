@@ -6,15 +6,23 @@ interface ViewInterface {
 
     /**
      *
-     * @param string $file
+     * @param string $view
      * @return void
      */
-    public function load(string $file);
+    public function load(string $view);
 
     /**
      *
-     * @param string $message
-     * @return void
+     * @param string $view
+     * @param array $parameters
+     * @return string
      */
-    public function error(string $message);
+    public function render(string $view, array $parameters = []) : string;
+
+    /**
+     *
+     * @param string $view
+     * @return self
+     */
+    public function setView(string $view);
 }
