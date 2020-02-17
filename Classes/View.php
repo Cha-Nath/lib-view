@@ -7,7 +7,8 @@ use nlib\View\Interfaces\ViewInterface;
 
 class View implements ViewInterface {
 
-    private $_view;
+    private $_view;    
+    private $_parameters;
 
     public function __construct(string $view) {
         $this->setView($view);
@@ -31,5 +32,16 @@ class View implements ViewInterface {
         return $html;
     }
 
+    #region Getter
+
+    public function getParameters() : array { return $this->_parameters; }
+
+    #endregion
+
+    #region Setter
+
+    public function setParameters(array $parameters) : self { $this->_parameters = $parameters; return $this; }
     public function setView(string $view) : self { $this->_view = $view; return $this; }
+
+    #endregion
 }

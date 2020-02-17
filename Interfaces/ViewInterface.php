@@ -20,8 +20,21 @@ interface ViewInterface {
 
     /**
      *
+     * @return array
+     */
+    public function getParameters() : array;
+
+    /**
+     *
      * @param string $view
      * @return self
      */
     public function setView(string $view);
+
+    /**
+     *
+     * @param array $parameters
+     * @return self
+     */
+    public function setParameters(array $parameters);
 }
