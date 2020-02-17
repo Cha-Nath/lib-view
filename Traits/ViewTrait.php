@@ -2,7 +2,7 @@
 
 namespace nlib\View\Traits;
 
-use lib\View\Classes\View;
+use nlib\View\Classes\View;
 
 trait ViewTrait {
 

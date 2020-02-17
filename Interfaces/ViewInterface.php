@@ -1,6 +1,6 @@
 <?php
 
-namespace lib\View\Interfaces;
+namespace nlib\View\Interfaces;
 
 interface ViewInterface {
 

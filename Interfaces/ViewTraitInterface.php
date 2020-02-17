@@ -2,7 +2,7 @@
 
 namespace nlib\View\Interfaces;
 
-use lib\View\Classes\View;
+use nlib\View\Classes\View;
 
 interface ViewTraitInterface {
 

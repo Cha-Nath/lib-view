@@ -1,9 +1,9 @@
 <?php
 
-namespace lib\View\Classes;
+namespace nlib\View\Classes;
 
-use lib\Path\Classes\Path;
-use lib\View\Interfaces\ViewInterface;
+use nlib\Path\Classes\Path;
+use nlib\View\Interfaces\ViewInterface;
 
 class View implements ViewInterface {
 
