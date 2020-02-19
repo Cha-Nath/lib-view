@@ -26,6 +26,13 @@ interface ViewInterface {
 
     /**
      *
+     * @param string $key
+     * @return null|mixed
+     */
+    public function getParameter(string $key);
+
+    /**
+     *
      * @param string $view
      * @return self
      */
