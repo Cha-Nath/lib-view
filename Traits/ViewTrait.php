@@ -12,7 +12,8 @@ trait ViewTrait {
 
     public function View(string $view) : View {
         if(empty($this->_view)) $this->setView(new View($view));
-        return $this->_view->setView($view);
+        else $this->_view->setView($view)->setParameters([]);
+        return $this->_view;
     }
 
     #endregion

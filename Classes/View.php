@@ -18,7 +18,7 @@ class View implements ViewInterface {
 
         if(!file_exists($to_load = Path::i()->getPublic() . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
         
-        require_once $to_load;
+        require $to_load;
     }
 
     public function render(array $parameters = []) : string {
