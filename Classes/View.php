@@ -7,6 +7,7 @@ use nlib\View\Interfaces\ViewInterface;
 
 class View implements ViewInterface {
 
+    private $_i = 'i';
     private $_view;    
     private $_parameters;
 
@@ -16,7 +17,7 @@ class View implements ViewInterface {
 
     public function load(string $view) : void {
 
-        if(!file_exists($to_load = Path::i()->getPublic() . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
+        if(!file_exists($to_load = Path::i($this->_i)->getPublic() . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
         
         require $to_load;
     }
@@ -46,6 +47,7 @@ class View implements ViewInterface {
 
     #region Setter
 
+    public function setI(string $i = 'i') { $this->_i = $i; return $this; }
     public function setParameters(array $parameters) : self { $this->_parameters = $parameters; return $this; }
     public function setView(string $view) : self { $this->_view = $view; return $this; }
 
