@@ -47,7 +47,7 @@ class View implements ViewInterface {
 
     #region Setter
 
-    public function setI(string $i = 'i') { $this->_i = $i; return $this; }
+    public function setI(string $i = 'i') : self { $this->_i = $i; return $this; }
     public function setParameters(array $parameters) : self { $this->_parameters = $parameters; return $this; }
     public function setView(string $view) : self { $this->_view = $view; return $this; }
 
