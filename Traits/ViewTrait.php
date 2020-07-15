@@ -11,9 +11,10 @@ trait ViewTrait {
     #region Getter
 
     public function View(string $view) : View {
+        $instance = (method_exists($this, $method = '_i')) ? $this->{$method}() : 'i';
         if(empty($this->_view)) $this->setView(new View($view));
         else $this->_view->setView($view)->setParameters([]);
-        return $this->_view;
+        return $this->_view->setInstance($instance);
     }
 
     #endregion

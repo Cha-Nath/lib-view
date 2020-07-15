@@ -33,13 +33,6 @@ interface ViewInterface {
 
     /**
      *
-     * @param string $i
-     * @return self
-     */
-    public function setI(string $i = 'i');
-
-    /**
-     *
      * @param string $view
      * @return self
      */
