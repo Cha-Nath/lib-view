@@ -41,9 +41,8 @@ class View implements ViewInterface {
     #region Getter
 
     public function getParameters() : array { return $this->_parameters; }
-    public function getParameter(string $key) {
-        return array_key_exists($key, $this->getParameters()) ? $this->_parameters[$key] : null;
-    }
+    public function getParameter(string $key) { return $this->get($key); }
+    public function get(string $key) { return array_key_exists($key, $this->getParameters()) ? $this->_parameters[$key] : null; }
 
     #endregion
 
