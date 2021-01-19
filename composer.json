@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "nlib\\View\\src": ""
+            "nlib\\View\\": ""
         }
     },
     "minimum-stability": "dev",
