@@ -12,6 +12,7 @@ class View implements ViewInterface {
 
     private $_view;    
     private $_parameters;
+    private $_autoload = true;
 
     public function __construct(string $view) {
         $this->setView($view);
@@ -19,7 +20,8 @@ class View implements ViewInterface {
 
     public function load(string $view) : void {
 
-        if(!file_exists($to_load = Path::i($this->_i())->getPublic() . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
+        $path =  $this->_autoload ? Path::i($this->_i())->getPublic() : '';
+        if(!file_exists($to_load = $path . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
         
         require $to_load;
     }
@@ -50,6 +52,7 @@ class View implements ViewInterface {
 
     public function setParameters(array $parameters) : self { $this->_parameters = $parameters; return $this; }
     public function setView(string $view) : self { $this->_view = $view; return $this; }
+    public function setAutoload(bool $autoload) : self { $this->_autoload = $autoload; return $this; }
 
     #endregion
 }
