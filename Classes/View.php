@@ -21,7 +21,8 @@ class View implements ViewInterface {
     public function load(string $view) : void {
 
         $path =  $this->_autoload ? Path::i($this->_i())->getPublic() : '';
-        if(!file_exists($to_load = $path . $view . '.php')) die('View "<em>' . $view . '</em>" doesn\'t exist.');
+        $to_load = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path . $view . '.php');
+        if(!file_exists($to_load)) die('View "<em>' . $view . '</em>" doesn\'t exist.');
         
         require $to_load;
     }
